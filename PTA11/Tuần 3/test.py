@@ -107,5 +107,5 @@ if __name__ == '__main__':
 
     main_window = LoginRegisterApp()
     main_window.show()
-
+    print("Hello")
     sys.exit(app.exec())
