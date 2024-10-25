@@ -1,0 +1,25 @@
+Số lượng các số không trùng lặp trong file: 7
+Số lượng các số không trùng lặp trong file: 7
+10: 2
+83: 3
+48: 3
+338: 1
+32: 1
+29: 1
+19: 1
+Số lượng các số không trùng lặp trong file: 7
+10: 2
+83: 3
+48: 3
+338: 1
+32: 1
+29: 1
+19: 1
+Số lượng các số không trùng lặp trong file: 7
+10: 2
+83: 3
+48: 3
+338: 1
+32: 1
+29: 1
+19: 1

@@ -1,0 +1,6 @@
+account1;12345678;0123456;Nguyễn Văn A;90000000
+account2;12345678;1234567;Trần Văn B;12000000
+account3;12345678;0000000;Nguyễn Thị C;12000000
+account4;12345678;1111111;Phạm Quang D;12000000
+buiquangvinh9a4;Vinh11a44;142345;Bùi Quang Vinh;0
+dâdadaddadad;1213231312;952022;Bùi Quang Vinh;0

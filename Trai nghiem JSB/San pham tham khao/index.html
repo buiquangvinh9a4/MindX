@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Galaxy Z Fold 4</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(222, 222, 253) ;
+        }
+        #center-main {
+            width:1000px;
+            height: 98%;
+            box-shadow: 0 5px 5px gray;
+            padding: 10px 15px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+        }
+        h1 {
+            font-size: 50px;
+            color: darkslategray;
+        }
+        img {
+            width: 250px;
+        }
+
+        h2 {
+            font-size: 35px;
+            color: red;
+            display: inline-block;
+        }
+        del {
+            font-size: 25px;
+            margin-left: 20px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        button {
+            width: 200px;
+            height: 40px;
+            font-size: 30px;
+            background-color: rgb(0, 90, 156);
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        h3 {
+            font-size: 30px;
+        }
+        li {
+            line-height: 1.6;
+            font-size: 18px;
+            font-style: italic;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-indent: 20px;
+            text-align: justify;
+        }
+        table td {
+            padding: 10px;
+        }
+        #youtube {
+            width: 100px;
+        }
+        #tragop {
+            background-color: rgb(251, 67, 67);
+        }
+        input {
+            width: 200px;
+            height: 30px;
+            margin-right: 20px;
+            font-size: 18px;
+        }
+        input:last-child {
+            width: 70px;
+            height: 40px;
+            background: rgb(3, 111, 253);
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="center-main">
+            <h1>Samsung Galaxy Z Fold 4</h1>
+            <img src="image.jpg" alt="">
+            <h2>37.990.000 ₫</h2>
+            <del>40.990.000 ₫</del> <br>
+            <a href="https://www.youtube.com/watch?v=_o4KauX_nW8"> Video review</a> <br><br>
+            <button onclick="buy()">Mua ngay</button>
+            <button onclick="calcu()" id="tragop">Trả góp</button>
+            <h3>Đặc điểm nổi bật</h3>
+            <ul>
+                <li>Camera mắt thần bóng đêm cho trải nghiệm chụp ảnh ấn tượng - Camera chính: 50MP</li>
+                <li>Khai mở trải nghiệm di động linh hoạt biến hóa - Màn hình ngoài 6.2"" cùng màn hình chính 7.6"" độc đáo</li>
+                <li>Hiệu năng mạnh mẽ đến từ dòng chip cao cấp của Qualcomm - Snapdragon 8 Plus Gen 1</li>
+                <li>Viên pin ấn tượng, sạc nhanh tức tốc - Pin 4,400 mAh, sạc nhanh 25 W</li>
+            </ul>
+            <p>Galaxy Z Fold3 vốn đã rất nổi bật thì mới đây, sự xuất hiện của điện thoại gập mới Samsung Galaxy Z Fold 4 lại càng hấp dẫn nhiều người dùng hơn khi sở hữu thiết kế gập màn hình mới cùng với những cải tiến cho trải nghiệm nhân đôi. Vậy chiếc smartphone màn hình gập cao cấp thế hệ mới có gì mới, giá bao nhiêu và có nên mua không? Cùng tìm hiểu nhé!</p>
+            <h3>Thông số kĩ thuật</h3>
+            <table border="1">
+                <tr>
+                    <td>Kích thước màn hình</td>
+                    <td>7.6 inches</td>
+                </tr>
+                <tr>
+                    <td>Hệ điều hành</td>
+                    <td>Android 12, One UI 4.1.1</td>
+                </tr>
+                <tr>
+                    <td>Pin</td>
+                    <td>4,400 mAh</td>
+                </tr>
+                <tr>
+                    <td>Trọng lượng</td>
+                    <td>263 g</td>
+                </tr>
+            </table>
+            <h3>Hãy để lại thông tin nếu bạn cần tư vấn về sản phẩm</h3>
+            <form action="">
+                <input type="text" placeholder="Họ và tên">
+                <input type="text" placeholder="Email hoặc SĐT">
+                <input type="submit" value="Gửi" onclick="sent()">
+            </form>
+        </div>
+    </div>
+
+    
+    
+</body>
+<script>
+    function buy() {
+        alert("Mua thành công");
+    }
+    function sent() {
+        alert("Chúng tôi sẽ sớm liên hệ lại với bạn!");
+    }
+    function calcu () {
+        var x = prompt("Bạn muốn trả bao nhiêu phần trăm (Gõ tỉ lệ % của bạn)");
+        var number_buy = parseInt((37990000 * x) / 100);
+        var need_to_pay = 37990000 - number_buy;
+        alert("Bạn cần phải trả trước " + number_buy + " đồng");
+        alert("Bạn còn phải nợ " + need_to_pay + " đồng");
+    }
+</script>
+</html>
