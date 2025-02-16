@@ -219,7 +219,7 @@ min-height: 50;</string>
       </widget>
      </item>
      <item alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="buttonSignUp">
        <property name="minimumSize">
         <size>
          <width>320</width>
