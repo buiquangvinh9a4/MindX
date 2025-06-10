@@ -1,0 +1,51 @@
+[
+    {
+        "id_mathang": "123456",
+        "tenMatHang": "Trà sữa Phương Tuấn",
+        "soLuong": 20,
+        "giaTien": 15000,
+        "hinhAnh": "images/trasua.jpg"
+    },
+    {
+        "id_mathang": "123457",
+        "tenMatHang": "Trà sữa Bạc Hà",
+        "soLuong": 20,
+        "giaTien": 30000,
+        "hinhAnh": "images/trasua.jpg"
+    },
+    {
+        "id_mathang": "123458",
+        "tenMatHang": "Hồng trà sữa",
+        "soLuong": 50,
+        "giaTien": 25000,
+        "hinhAnh": "images/trasua.jpg"
+    },
+    {
+        "id_mathang": "123459",
+        "tenMatHang": "Trà sữa hạt dẻ",
+        "soLuong": 50,
+        "giaTien": 20000,
+        "hinhAnh": "images/trasua.jpg"
+    },
+    {
+        "id_mathang": "123459",
+        "tenMatHang": "Trà sữa hạt dẻ",
+        "soLuong": 50,
+        "giaTien": 20000,
+        "hinhAnh": "images/trasua.jpg"
+    },
+    {
+        "id_mathang": "123459",
+        "tenMatHang": "Trà sữa hạt dẻ",
+        "soLuong": 50,
+        "giaTien": 20000,
+        "hinhAnh": "images/trasua.jpg"
+    },
+    {
+        "id_mathang": "123459",
+        "tenMatHang": "Trà sữa hạt dẻ",
+        "soLuong": 50,
+        "giaTien": 20000,
+        "hinhAnh": "images/trasua.jpg"
+    }
+]

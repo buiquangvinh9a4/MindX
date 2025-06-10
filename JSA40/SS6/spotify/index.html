@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="css/homepage.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+            </svg>
+            <input type="text" placeholder="Bạn muốn phát nội dung gì?">
+        </div>
+        <nav>
+            <a href="#">Premium</a>
+            <a href="#">Hỗ trợ</a>
+            <a href="#">Tải xuống</a>
+            <a href="#">Cài đặt Ứng dụng</a>
+            <a href="pages/signup.html">Đăng ký</a>
+            <a href="pages/signin.html"
+                style="background: white; color: black; padding: 10px 20px; border-radius:20px;">Đăng nhập</a>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <h3>Thư viện</h3>
+            <div class="library-box">
+                <p><strong>Tạo danh sách phát đầu tiên của bạn</strong></p>
+                <p>Rất dễ! Chúng tôi sẽ giúp bạn</p>
+                <button>Tạo danh sách phát</button>
+            </div>
+            <div class="library-box">
+                <p><strong>Hãy cùng tìm và theo dõi một số podcast</strong></p>
+                <p>Chúng tôi sẽ cập nhật cho bạn thông tin về các tập mới</p>
+                <button>Duyệt xem podcast</button>
+            </div>
+        </aside>
+
+        <section class="content">
+            <h2>Nghệ sĩ phổ biến</h2>
+            <div id="singerList">B
+
+            </div>
+
+            <h2>Album và đĩa đơn nổi tiếng</h2>
+            <div id="albums">
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pháp lý | Quyền riêng tư | Cookie | Giới thiệu Quảng cáo</p>
+        <p>Tiếng Việt</p>
+    </footer>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

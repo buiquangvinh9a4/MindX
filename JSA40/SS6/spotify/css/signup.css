@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #181818;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+}
+
+.phone-link {
+    display: block;
+    color: #1DB954;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-green {
+    width: 100%;
+    padding: 10px;
+    background: #1DB954;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.divider {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.btn-social {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.google {
+    background: white;
+    color: black;
+}
+
+.facebook {
+    background: #1877F2;
+    color: white;
+}
+
+.apple {
+    background: black;
+    color: white;
+}
+
+.login-text {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #1DB954;
+    text-decoration: none;
+}
+
+.footer-text {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+.footer-text a {
+    color: white;
+    text-decoration: none;
+}

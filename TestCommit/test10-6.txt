@@ -1,0 +1,119 @@
+# Tổng hợp các bài tập lớn của các nhóm
+
+---
+
+## CS1: Hệ thống rút gọn URL
+
+**Mục tiêu:** Cải thiện hiệu suất và khả năng mở rộng hệ thống rút gọn link.
+
+*Hệ thống trước đó*: Monolith, Sqlite, chưa có backup, kiến trúc đơn giản, không có cache.
+
+**Vấn đề:** 
+
+### ✅ Các kỹ thuật & giải pháp đã áp dụng:
+
+1. **Cache Aside Pattern**
+   - Dữ liệu URL rút gọn không thay đổi thường xuyên → dùng cache-aside để tăng tốc truy xuất.
+   - 🛠 Công nghệ: Redis
+
+2. **CQRS (Command Query Responsibility Segregation)**
+   - Tách luồng đọc và ghi giúp tăng hiệu năng.
+   - Sử dụng hai cơ sở dữ liệu riêng biệt cho đọc và ghi.
+
+3. **Sharding Pattern**
+   - Chia nhỏ dữ liệu theo shard khi số lượng bản ghi > 1 triệu.
+   - Hiện chỉ áp dụng local do VPS cấu hình yếu.
+
+4. **Thay SQLite bằng MongoDB**
+   - MongoDB hỗ trợ tốt hơn cho dữ liệu lớn, dễ scale.
+
+5. **Circuit Breaker**
+   - Tự động loại bỏ instance lỗi khỏi hệ thống để đảm bảo ổn định.
+
+6. **Rate Limiting**
+   - Giới hạn số lượng request từ 1 IP → chống DDoS, giảm tải.
+
+---
+
+## CS2: Hệ thống dịch file ảnh tiếng Anh (OCR) sang file PDF (văn bản) tiếng Việt
+
+**Mục tiêu:** Nhận diện văn bản từ ảnh tiếng Anh và chuyển sang file PDF văn bản tiếng Việt.
+
+*Hệ thống trước đó*: Monolith, thực hiện xử lý tuần tự (thiếu parallelism), thiếu caching, khả năng chịu lỗi kém và không hồi phục được.
+
+### ✅ Các kỹ thuật & giải pháp:
+
+1. **Kiến trúc Pipeline**,
+
+2. **Cache-Aside**.
+
+3. **Valet-Key Pattern**
+   - Bảo mật: Một loạt service gọi đến dịch vụ -> Phải có valet key thì mới được ghi trực tiếp (user đáng tin cậy), nếu không thì phải thông qua API validation.
+
+4. **Batch Processing / Queue**
+   - Xử lý hàng loạt ảnh đồng thời để tối ưu hiệu năng.
+
+5. **Gateway Pattern**
+   - Tạo một API Gateway để quản lý các dịch vụ con, giúp dễ dàng mở rộng và bảo trì.
+
+---
+
+## CS4: Hệ thống key-value hiển thị giá vàng (Real-time)
+
+**Mục tiêu:** Hiển thị dữ liệu dạng key-value (ví dụ: giá vàng) theo thời gian thực.
+
+*Hệ thống trước đó*: Monolith, SQLite, không có real-time và giao diện (sử dụng polling), không có cache, hiệu năng thấp.
+
+### ✅ Các kỹ thuật & giải pháp:
+
+1. **CQRS**
+   - Tách riêng quá trình đọc/ghi → tăng hiệu năng và tránh xung đột.
+
+2. **Pub/Sub với Socket.io**
+   - Dữ liệu thay đổi được cập nhật tới client ngay lập tức, thay polling.
+
+3. **Chuyển SQLite → MongoDB**
+   - MongoDB linh hoạt hơn cho dữ liệu key-value.
+
+4. **Redis**
+   - Cache giá trị → giảm tải DB, tăng tốc phản hồi.
+
+### 📊 Benchmark:
+
+- **JMeter:**  
+  - Không hỗ trợ socket.io tốt → kết quả thấp hơn ~10% so với thầy.
+
+- **Locust:**  
+  - 1000 user / 20s; tăng dần 60 user/s  
+  - Kết quả:  
+    - Hệ thống nhóm phản hồi **nhanh hơn 3 lần** so với hệ thống của thầy.
+
+---
+
+## CS5: Hệ thống crawler 5000 release từ các dự án nhiều sao nhất GitHub
+
+**Mục tiêu:** Thu thập thông tin các bản phát hành (release) từ top repo GitHub (>=10k sao).
+
+### ✅ Các kỹ thuật & giải pháp:
+
+1. **GitHub API**
+   - 🛠 REST API hoặc GraphQL API để lấy thông tin release.
+
+2. **Crawler bất đồng bộ / đa luồng**
+   - 🛠 Dùng `asyncio`, `aiohttp` hoặc `threading` để tối ưu thời gian crawl.
+
+3. **Lưu trữ dữ liệu**
+   - 🛠 MongoDB hoặc Elasticsearch để lưu trữ release data.
+
+4. **Scheduler**
+   - 🛠 Dùng cronjob hoặc Celery để cập nhật định kỳ.
+
+5. **Hiển thị kết quả**
+   - 🛠 Flask hoặc ExpressJS để tạo dashboard web đơn giản.
+
+6. **Rate Limiting / Proxy**
+   - Quản lý hạn mức API GitHub bằng access token luân phiên hoặc dùng proxy.
+
+---
+
+> ⚠️ **CS3: Chưa có thông tin** – Bạn vui lòng bổ sung để hoàn thiện danh sách!

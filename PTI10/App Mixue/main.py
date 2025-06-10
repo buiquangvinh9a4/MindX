@@ -1,11 +1,11 @@
 from enum import global_str
-from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QTableWidgetItem
 from PyQt6.QtGui import QPalette, QColor
 from PyQt6.QtCore import Qt
 from PyQt6 import uic
 import sys
 import json
-
+import subprocess
 
 class Login(QMainWindow):
     def __init__(self, controller):
@@ -40,13 +40,20 @@ class Login(QMainWindow):
             # 2. nếu tìm thấy, so sánh password
             if isEmailValid == True:
                 if password == password_user:
-                    self.controller.show_homepage()
+                
+                    if email == "admin":
+                        self.controller.show_homepage()
+                    else:
+                         with open("db/userLogin.json", "w") as f:
+                            json.dump({"email": email}, f)
+                         subprocess.Popen(["python3", "item.py"])  # Trên macOS/Linux
+                        # subprocess.Popen(["python", "user.py"])  # Trên Windows
+                    self.close()
 
                 else:
                     print("Mật khẩu không hợp lệ!")
             else:
                 print("Tài khoản không tồn tại!")
-
 
 
 class SignUp(QMainWindow):
@@ -93,21 +100,78 @@ class SignUp(QMainWindow):
             print("Tài khoản đã tồn tại!")
             
             
-
 class HomePage(QMainWindow):
     def __init__(self, controller):
         super().__init__()
-        uic.loadUi("ui/admin_ui.ui", self)
+        uic.loadUi("ui/adminUi.ui", self)
         self.controller = controller
-        self.btn_show_accounts.clicked.connect(self.open_accounts)
-        self.btn_show_items.clicked.connect(self.open_items)
-        self.stackedWidget.setCurrentIndex(0)
+        self.btn_taikhoan.clicked.connect(self.moTaiKhoan)
+        self.btn_mathang.clicked.connect(self.moMatHang)
+        self.btn_lichsu.clicked.connect(self.moLichSu)
+        self.docTaiKhoan()
+        self.docMatHang()
+        self.btn_addUser.clicked.connect(self.moThemTaiKhoan)
 
-    def open_accounts(self):
+    def moTaiKhoan(self):
+        self.docTaiKhoan()
         self.stackedWidget.setCurrentIndex(0)
-    
-    def open_items(self):
+    def moMatHang(self):
+        self.docMatHang()
         self.stackedWidget.setCurrentIndex(1)
+    def moLichSu(self):
+        self.stackedWidget.setCurrentIndex(2)
+        
+    def docTaiKhoan(self):
+        with open("db/accounts.json", "r", encoding="utf-8") as f:
+            self.data = json.load(f)
+            self.bangTaiKhoan.setRowCount(len(self.data))
+
+            for row, item in enumerate(self.data):
+                self.bangTaiKhoan.setItem(row, 0, QTableWidgetItem(item["email"]))
+                self.bangTaiKhoan.setItem(row, 1, QTableWidgetItem(item["password"]))
+                self.bangTaiKhoan.setItem(row, 2, QTableWidgetItem("Fake tên"))
+
+    def docMatHang(self):
+        with open("db/items.json", "r", encoding="utf-8") as f:
+            self.data = json.load(f)
+            self.bangMatHang.setRowCount(len(self.data))
+
+            for row, item in enumerate(self.data):
+                self.bangMatHang.setItem(row, 0, QTableWidgetItem(item["id_mathang"]))
+                self.bangMatHang.setItem(row, 1, QTableWidgetItem(item["tenMatHang"]))
+                self.bangMatHang.setItem(row, 2, QTableWidgetItem(str(item["soLuong"])))
+                self.bangMatHang.setItem(row, 3, QTableWidgetItem(str(item["giaTien"])))
+
+    def moThemTaiKhoan(self):
+        self.add_user_window = AddUserWindow(self)
+        self.add_user_window.show()
+        
+
+
+class AddUserWindow(QMainWindow):
+    def __init__(self, parent = None):
+        super().__init__()
+        uic.loadUi("ui/addUser.ui", self)
+        self.btn_add.clicked.connect(self.themTaiKhoan)
+    
+    def themTaiKhoan(self):
+        email = self.edt_email.text()
+        password = self.edt_password.text()
+        
+        with open("db/accounts.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+            newAccount = {
+                "email": email,
+                "password": password
+            }
+            data.append(newAccount)
+            with open("db/accounts.json", "w") as f:
+                    json.dump(data, f, indent = 4)
+        self.close()
+
+
+
+
 
 class Controller:
     def __init__(self):
@@ -132,6 +196,7 @@ class Controller:
             self.login_window.close()
         self.homepage_window = HomePage(self)
         self.homepage_window.show()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

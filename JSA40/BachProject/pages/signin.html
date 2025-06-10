@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập vào Spotify</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            width: 350px;
+            background: #121212;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .logo {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        input {
+            width: 94%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: white;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #1DB954;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .forgot-password, .signup {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .forgot-password a, .signup a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+        .recaptcha {
+            font-size: 12px;
+            margin-top: 20px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvGCS7xIziyUA_trXM7IkwvXSULPWoXWtZiw&s" alt="Spotify Logo" class="logo">
+        <h2>Đăng nhập vào Spotify</h2>
+        <input type="text" placeholder="Email hoặc tên người dùng">
+        <input type="password" placeholder="Mật khẩu">
+        <button class="btn">Đăng nhập</button>
+        <div class="forgot-password">
+            <a href="#">Quên mật khẩu của bạn?</a>
+        </div>
+        <div class="signup">
+            Bạn chưa có tài khoản? <a href="../pages/signup.html">Đăng ký Spotify</a>
+        </div>
+        <div class="recaptcha">
+            Trang web này được bảo vệ bằng reCAPTCHA và tuân theo <a href="#">Chính sách quyền riêng tư</a> cũng như <a href="#">Điều khoản dịch vụ</a> của Google.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,10 +1,29 @@
 [
     {
         "email": "admin",
-        "password": "123456"
+        "password": "123456",
+        "name": "Huy Kira",
+        "role": "DESIGNER + DEVELOPER",
+        "address": "Liên Chiểu, Đà Nẵng, Việt Nam",
+        "phone": "+84 1658 949 68",
+        "avatar": "avatar1.png"
     },
     {
-        "email": "123456",
-        "password": "123"
+        "email": "user1",
+        "password": "1",
+        "name": "Nguyễn Văn A",
+        "role": "Frontend Developer",
+        "address": "Hà Nội, Việt Nam",
+        "phone": "0123456789",
+        "avatar": "avatar2.png"
+    },
+    {
+        "email": "user2",
+        "password": "2",
+        "name": "Trần Thị B",
+        "role": "UI/UX Designer",
+        "address": "Hồ Chí Minh, Việt Nam",
+        "phone": "0987654321",
+        "avatar": "avatar3.png"
     }
 ]

@@ -1,0 +1,74 @@
+[
+    {
+        "username": "user1",
+        "time": "2025-04-06 14:32:44",
+        "purchase": [
+            {
+                "tenMatHang": "Trà sữa Phương Tuấn",
+                "soLuong": 2,
+                "giaTien": 30000,
+                "hinhAnh": "images/trasua.jpg"
+            },
+            {
+                "tenMatHang": "Hồng trà sữa",
+                "soLuong": 2,
+                "giaTien": 50000,
+                "hinhAnh": "images/trasua.jpg"
+            }
+        ]
+    },
+    {
+        "username": "user2",
+        "time": "2025-04-06 14:33:56",
+        "purchase": [
+            {
+                "tenMatHang": "Trà sữa Bạc Hà",
+                "soLuong": 5,
+                "giaTien": 150000,
+                "hinhAnh": "images/trasua.jpg"
+            }
+        ]
+    },
+    {
+        "username": "user2",
+        "time": "2025-04-06 15:00:36",
+        "purchase": [
+            {
+                "tenMatHang": "Trà sữa Phương Tuấn",
+                "soLuong": 6,
+                "giaTien": 90000,
+                "hinhAnh": "images/trasua.jpg"
+            },
+            {
+                "tenMatHang": "Trà sữa Bạc Hà",
+                "soLuong": 4,
+                "giaTien": 120000,
+                "hinhAnh": "images/trasua.jpg"
+            },
+            {
+                "tenMatHang": "Hồng trà sữa",
+                "soLuong": 5,
+                "giaTien": 125000,
+                "hinhAnh": "images/trasua.jpg"
+            },
+            {
+                "tenMatHang": "Trà sữa hạt dẻ",
+                "soLuong": 4,
+                "giaTien": 80000,
+                "hinhAnh": "images/trasua.jpg"
+            }
+        ]
+    },
+    {
+        "username": "user1",
+        "time": "2025-04-06 15:30:55",
+        "purchase": [
+            {
+                "tenMatHang": "Trà sữa Phương Tuấn",
+                "soLuong": 2,
+                "giaTien": 30000,
+                "hinhAnh": "images/trasua.jpg"
+            }
+        ]
+    }
+]

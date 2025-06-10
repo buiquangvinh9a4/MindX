@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 p-4 bg-gray-800 flex flex-col">
+            <h1 class="text-2xl font-bold mb-4">Spotify</h1>
+            <nav>
+                <ul>
+                    <li class="flex items-center gap-2 mb-2">🏠 Home</li>
+                    <li class="flex items-center gap-2 mb-2">🔍 Search</li>
+                    <li class="flex items-center gap-2">🎵 Your Library</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../spotify/pages/signin.html">
+                          <button id="btn_signin" typee="button" class="btn btn-light">
+                            đăng nhập
+                          </button>
+                        </a>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../spotify/pages/signup.html">
+                          <button id="btn_signup" type="button" class="btn btn-danger">
+                            Đăng ký
+                          </button>
+                        </a>
+                      </li>
+                </ul>
+            </nav>
+            <div class="mt-auto">
+                <h2 class="text-lg font-semibold mb-2">Playlists</h2>
+                <ul>
+                    <li class="mb-1">Chill Vibes</li>
+                    <li class="mb-1">Workout Mix</li>
+                    <li>Focus Mode</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h2 class="text-xl font-semibold mb-4">Now Playing</h2>
+            <div class="p-4 bg-gray-700 rounded-lg">
+                <p class="text-lg font-medium">Song 1</p>
+            </div>
+            
+            <div class="mt-6 flex items-center gap-4">
+                <button class="text-white text-2xl">⏮️</button>
+                <button class="text-white text-3xl">▶️</button>
+                <button class="text-white text-2xl">⏭️</button>
+            </div>
+
+            <!-- Danh sách ca sĩ -->
+            <div id="singerList">
+                
+            </div>
+        </main>
+    </div>
+    <script src="js/home.js"></script>
+</body>
+</html>
